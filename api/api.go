@@ -5,12 +5,17 @@ import (
 	"fmt"
 )
 
+const (
+	NGESDataServer = "DataServer.DataService/GraphqlQuery"
+)
+
 type App interface {
 	AppInit(interface{})
 	GraphQuery(context.Context, string) (string, error)
 
 	GetTenantID(context.Context) uint64
 	GetUin(context.Context) uint64
+	NgesInvoke(ctx context.Context, cmd, payload string) (string, error)
 }
 
 var apps []App
