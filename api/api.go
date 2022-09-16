@@ -13,6 +13,7 @@ type App interface {
 	AppInit(interface{})
 	GraphQuery(context.Context, string) (string, error)
 
+	GetToken(ctx context.Context) string
 	GetTenantID(context.Context) uint64
 	GetUin(context.Context) uint64
 	NgesInvoke(ctx context.Context, cmd, payload string) (string, error)
